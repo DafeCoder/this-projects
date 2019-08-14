@@ -1,0 +1,124 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-topbar {
+  display: flex;
+  background-color: #f9f9f9;
+  width: 100%;
+  padding: 0 40px;
+  height: 100px;
+  align-items: center;
+  border-bottom: 1px solid #f5f6f7;
+  position: relative;
+}
+
+.logo-img {
+  background-image: url(//d3aut7n3cm71gu.cloudfront.net/assets/logotype-primary-cb75e2.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  width: 105px;
+  height: 26px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #9228c2;
+}
+
+.signup-topbar ul {
+  margin-top: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  list-style: none;
+  color: #9228c2;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.signup-topbar ul li {
+  display: inline-block;
+  padding: 0 28px;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.signup-footer {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  min-height: 80px;
+  max-height: 80px;
+  margin-bottom: 0;
+  padding: 16px 0;
+  align-items: center;
+  border-top: 1px solid #dbddde;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 16px;
+  font-family: "Circular-Book", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #3b4f60;
+  margin-bottom: 0;
+}
+
+.progress-bar-container {
+  padding: 30px 60px;
+
+  .mat-progress-bar {
+    border-radius: 10px;
+    display: block;
+    height: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 250ms linear;
+    width: 100%;
+
+    ::ng-deep .mat-progress-bar-buffer {
+      background-color: white;
+      border-radius: 10px;
+      border: 1px solid #dfe1f0;
+    }
+
+    ::ng-deep .mat-progress-bar-fill::after {
+      background-color: #a961c9;
+      border-radius: 10px;
+      box-shadow: 0 0 6px rgba(99, 1, 143, 0.3);
+    }
+  }
+}
+
+.footer-logo {
+  display: flex;
+}
+
+.footer-logo-wrapper {
+  max-width: 125px;
+}
+
+.footer-logo img {
+  width: 100%;
+  margin-right: 8px;
+}
+
+.logout {
+  margin-left: 10px;
+}

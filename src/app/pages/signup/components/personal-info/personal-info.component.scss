@@ -1,0 +1,58 @@
+.title {
+    margin-top: 90px;
+
+    .m-5 {
+        margin: 0 !important;
+        margin-bottom: 15px !important;
+        font-size: 36px;
+    }
+
+    small {
+        font-size: 18px;
+        color: #8C8C8C;
+        font-weight: 100;
+    }
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    span.prefix {
+        width: 23px;
+        overflow: hidden;
+        margin-right: 20px;
+
+        &.lastName {
+            margin-right: 18px;
+        }
+
+        img {
+            margin-bottom: 8px;
+        }
+    }
+
+    span.suffix {
+        img {
+            margin-bottom: 13px;
+        }
+    }
+}
+
+.mat-card {
+    max-width: 370px;
+    box-shadow: none;
+}
+
+.mat-raised-button.mat-primary {
+    background-color: #9228C2;
+    height: 60px;
+    box-shadow: 0 0 15px rgba(99, 1, 143, 0.3);
+    border-radius: 0;
+
+    &[disabled] {
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: none;
+    }
+}

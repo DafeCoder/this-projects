@@ -1,0 +1,172 @@
+<div class="title">
+    <h1 class="m-5">Tell us about yourself</h1>
+    <small>Lorem ipsum dolor sit amet, consectetur adipiscing</small>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1 my-auto mr-2">
+            <button mat-icon-button class="btn" (click)="prev()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+        <div class="col-10 form">
+            <mat-card>
+                <mat-card-content>
+                    <form [formGroup]="form" (keyup.enter)="next()">
+                        <mat-form-field class="w-100">
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/education.png'" alt="image">
+                            </span>
+                            <mat-label>Education</mat-label>
+                            <mat-select formControlName="degree">
+                                <mat-option *ngFor="let degree of degrees" [value]="degree">
+                                    {{ degree }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/employment.png'" alt="image">
+                            </span>
+                            <mat-label>Employment</mat-label>
+                            <mat-select formControlName="employment">
+                                <mat-option *ngFor="let employment of employmentStatus" [value]="employment">
+                                    {{ employment }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/age.png'" alt="image">
+                            </span>
+                            <mat-label>Age</mat-label>
+                            <input matInput type="number" formControlName="age" autocomplete="off">
+                            <mat-error *ngIf="this.form.get('age').touched && !this.form.get('age').value">This field is
+                                required</mat-error>
+                            <mat-error
+                                *ngIf="this.form.get('age').touched && this.form.get('age').hasError('pattern') && this.form.get('age').value">
+                                Value must be between 1 - 99</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/zipcode.png'" alt="image">
+                            </span>
+                            <mat-label>Zip code</mat-label>
+                            <input matInput type="text" formControlName="zipcode" (keyup.enter)="next()">
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/hand.png'" alt="image">
+                            </span>
+                            <mat-label>Income</mat-label>
+                            <input matInput type="number" name="sliderValue" [(ngModel)]="income"
+                                [ngModelOptions]="{standalone: true}" readonly>
+                            <mat-hint>Select income on slider</mat-hint>
+                        </mat-form-field>
+                        <div class="slider-container">
+                                <mat-slider class="income-slider" [max]="max" [min]="min" [step]="step"
+                                [thumbLabel]="thumbLabel" [displayWith]="formatLabel" formControlName="income"
+                                color='primary' class="col-12" (keyup.enter)="next()">
+                                
+                            </mat-slider>
+                            <div class="range">
+                                <div>0</div>
+                                <div>$25k</div>
+                                <div>$50k</div>
+                                <div>$75k</div>
+                                <div>$100k+</div>
+                            </div>
+                        </div>
+
+
+                        <mat-form-field class="w-100">
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/saving.png'" alt="image">
+                            </span>
+                            <mat-label>Savings</mat-label>
+                            <input matInput type="number" name="sliderValue" [(ngModel)]="savings"
+                                [ngModelOptions]="{standalone: true}" readonly>
+                            <mat-hint>Select savings on slider</mat-hint>
+                        </mat-form-field>
+
+                        <div class="slider-container">
+                        <mat-slider class="income-slider" [max]="max" [min]="min" [step]="step"
+                            [thumbLabel]="thumbLabel" [displayWith]="formatLabel" formControlName="savings"
+                            color='primary' class="col-12" (keyup.enter)="next()">
+                        </mat-slider>
+                        <div class="range">
+                                <div>0</div>
+                                <div>$25k</div>
+                                <div>$50k</div>
+                                <div>$75k</div>
+                                <div>$100k+</div>
+                            </div>
+                        </div>
+
+                        <mat-form-field class="w-100">
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/debt.png'" alt="image">
+                            </span>
+                            <mat-label>Debt</mat-label>
+                            <input matInput type="number" name="sliderValue" [(ngModel)]="debt"
+                                [ngModelOptions]="{standalone: true}" readonly>
+                            <span class="suffix" matSuffix>
+                                <img [src]="'assets/images/icons/question.png'" alt="image">
+                            </span>
+                            <mat-hint>Select debt on slider</mat-hint>
+                        </mat-form-field>
+                        
+                        <div class="slider-container">
+                        <mat-slider class="income-slider" [max]="max" [min]="min" [step]="step"
+                            [thumbLabel]="thumbLabel" [displayWith]="formatLabel" formControlName="debt" color='primary'
+                            class="col-12" (keyup.enter)="next()">
+                        </mat-slider>
+                        <div class="range">
+                                <div>0</div>
+                                <div>$25k</div>
+                                <div>$50k</div>
+                                <div>$75k</div>
+                                <div>$100k+</div>
+                            </div>
+                        </div>
+
+                        <div class="w-100 checkbox">
+                            <mat-label><img [src]="'assets/images/icons/vehicle.png'" alt="image">Do you have a vehicle?</mat-label>
+                            <mat-radio-group formControlName="haveVehicle">
+                                <mat-radio-button [value]="true">Yes</mat-radio-button>
+                                <mat-radio-button [value]="false">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+
+                        <div class="w-100 checkbox">
+                            <mat-label><img [src]="'assets/images/icons/home.png'" alt="image">Do you have a house?</mat-label>
+                            <mat-radio-group formControlName="haveHouse">
+                                <mat-radio-button [value]="true">Yes</mat-radio-button>
+                                <mat-radio-button [value]="false">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+
+                        <div class="w-100 checkbox">
+                            <mat-label><img [src]="'assets/images/icons/pet.png'" alt="image">Do you have a pet?</mat-label>
+                            <mat-radio-group formControlName="havePet">
+                                <mat-radio-button [value]="true">Yes</mat-radio-button>
+                                <mat-radio-button [value]="false">No</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" class="w-100" (click)="next()"
+                        [disabled]="form.invalid">Next</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

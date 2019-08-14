@@ -1,0 +1,121 @@
+<div class="title">
+    <h1 class="m-5">Tell us about yourself</h1>
+    <small>Lorem ipsum dolor sit amet, consectetur adipiscing</small>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1 my-auto mr-2">
+            <button mat-icon-button class="btn" (click)="prev()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+        <div class="col-10 form">
+            <mat-card>
+                <mat-card-content>
+                    <form [formGroup]="form" (keyup.enter)="next()">
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/health.png'" alt="image">Health</mat-label>
+                            <mat-radio-group formControlName="have_health_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/vision.png'" alt="image">Vision</mat-label>
+                            <mat-radio-group formControlName="have_vision_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/dental.png'" alt="image">Dental</mat-label>
+                            <mat-radio-group formControlName="have_dental_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/life.png'" alt="image">Life</mat-label>
+                            <mat-radio-group formControlName="have_life_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/disability.png'" alt="image">Long-Term Disability</mat-label>
+                            <mat-radio-group formControlName="have_longtermdisability_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/short-disability.png'" alt="image">Short-Term Disability</mat-label>
+                            <mat-radio-group formControlName="have_shorttermdisability_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/accident.png'" alt="image">Accident</mat-label>
+                            <mat-radio-group formControlName="have_accident_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/illness.png'" alt="image">Critical Illness</mat-label>
+                            <mat-radio-group formControlName="have_criticalillness_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/auto.png'" alt="image">Auto</mat-label>
+                            <mat-radio-group formControlName="have_auto_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/home.png'" alt="image">Homeowner</mat-label>
+                            <mat-radio-group formControlName="have_homeowner_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/renters.png'" alt="image">Renters</mat-label>
+                            <mat-radio-group formControlName="have_renters_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div class="w-100 form-row">
+                            <mat-label><img [src]="'assets/images/icons/pet.png'" alt="image">Pet</mat-label>
+                            <mat-radio-group formControlName="have_pet_cover">
+                                <mat-radio-button value="Yes">Yes</mat-radio-button>
+                                <mat-radio-button value="No">No</mat-radio-button>
+                                <mat-radio-button value="Don't know">Don't know</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" class="w-100" (click)="next()"
+                        [disabled]="form.invalid">Next</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

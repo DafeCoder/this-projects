@@ -1,0 +1,54 @@
+<div class="title">
+    <h1 class="m-5">Tell us about yourself</h1>
+    <small>Lorem ipsum dolor sit amet, consectetur adipiscing</small>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1 my-auto mr-2">
+            <button mat-icon-button class="btn" (click)="prev()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+        <div class="form">
+            <mat-card>
+                <mat-card-content>
+                    <form [formGroup]="form" (keyup.enter)="next()">
+                        <mat-form-field class="w-100">
+                            <mat-label>First Name</mat-label>
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/user.png'" alt="image">
+                            </span>
+                            <input matInput placeholder="First Name" formControlName="firstName">
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <mat-label>Last Name</mat-label>
+                            <span class="prefix lastName" matPrefix>
+                                <img [src]="'assets/images/icons/last-name.png'" alt="image">
+                            </span>
+                            <input matInput placeholder="Last Name" formControlName="lastName">
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field class="w-100">
+                            <mat-label>Phone</mat-label>
+                            <span class="prefix" matPrefix>
+                                <img [src]="'assets/images/icons/phone.png'" alt="image">
+                            </span>
+                            <input matInput placeholder="Phone" formControlName="phone">
+                            <span class="suffix" matSuffix>
+                                <img [src]="'assets/images/icons/question.png'" alt="image">
+                            </span>
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+                    </form>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button class="w-100" color="primary" (click)="next()"
+                        [disabled]="form.invalid">Next</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
